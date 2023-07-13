@@ -51,19 +51,19 @@ class DoublyLL{
 		
 		//... InsertAtEndIn the Double LL..........................
 	void Reverse(Node*& _head) {
-    Node* current = _head;
-    Node* prev = NULL;
-
-    while (current != NULL) {
-        prev = current->prev;
-        current->prev = current->next;
-        current->next = prev;
-        current = current->prev;
+   
+     Node* curr=_head;
+    while (curr != NULL) {
+        
+       Node* temp= curr->prev;
+        curr->prev= curr->next;
+        curr->next= temp;
+        
+        _head=curr;
+        curr= curr->prev;
     }
 
-    if (prev != NULL) {
-        _head = prev->prev;
-    }
+   
 }
 		
 		   void Display(Node* node){
